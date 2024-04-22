@@ -3,9 +3,15 @@ from selenium.webdriver.common.by import By
 import time
 from ai import checkChatGPT
 import os
+from selenium.webdriver.firefox.options import Options as FFOptions
+
+
 
 #Load browser and navigate to url
-browser = webdriver.Firefox()
+options = FFOptions()
+service = webdriver.FirefoxService(executable_path="/snap/bin/geckodriver", options=options)
+browser = webdriver.Firefox(service=service)
+
 url = 'https://hacking4lawyers.com/blog/index.php'
 browser.get(url)
 
