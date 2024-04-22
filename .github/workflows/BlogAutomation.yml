@@ -7,8 +7,10 @@ jobs:
   scraper:
     runs-on: ubuntu-latest
 
-    permissions:
-        contents: write
+    env: # Or as an environment variable
+      blog_username: ${{ secrets.blog_username }}
+      blog_password: ${{ secrets.blog_password }}
+      openai_key: ${{ secrets.openai_key }}
 
     steps:
       - uses: actions/checkout@v4
