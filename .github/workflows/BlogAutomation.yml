@@ -16,6 +16,6 @@ jobs:
       - name: Blog-Automation
         run: |
           sudo apt-get update
-          sudo apt-get install firefox-geckodriver
+          sudo apt install firefox
           pip install -r requirements.txt
           python in_class_blog.py
