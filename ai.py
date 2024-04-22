@@ -5,7 +5,7 @@ def checkChatGPT(legal_text, prompt_text):
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
     "Content-Type": "application/json",
-    "Authorization": os.environ['openai_key']
+    "Authorization": os.environ.get('openai_key')
     }
     data = {
         "model": "gpt-3.5-turbo",

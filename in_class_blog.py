@@ -7,8 +7,7 @@ from selenium.webdriver.firefox.options import Options as FFOptions
 
 from selenium.webdriver.firefox.service import Service as FFService
 
-print(os.environ['BLOG_USERNAME'])
-print(os.environ['blog_username'])
+print(os.environ.get('blog_username'))
 
 # Load browser and navigate to url
 options = FFOptions()
@@ -20,8 +19,8 @@ browser = webdriver.Firefox(options=options,service=service)
 url = 'https://hacking4lawyers.com/blog/index.php'
 browser.get(url)
 
-browser.find_element(By.ID,"username").send_keys(os.environ['blog_username'])
-browser.find_element(By.ID,"password").send_keys(os.environ['blog_password'])
+browser.find_element(By.ID,"username").send_keys(os.environ.get('blog_username'))
+browser.find_element(By.ID,"password").send_keys(os.environ.get('blog_password'))
 browser.find_element(By.ID,"loginbutton").click()
 
 
