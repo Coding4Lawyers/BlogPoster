@@ -7,8 +7,9 @@ from selenium.webdriver.firefox.options import Options as FFOptions
 
 
 
-#Load browser and navigate to url
+# Load browser and navigate to url
 options = FFOptions()
+options.headless = True  # Set headless mode
 service = webdriver.FirefoxService(executable_path="/snap/bin/geckodriver", options=options)
 browser = webdriver.Firefox(service=service)
 
@@ -34,4 +35,4 @@ browser.find_element(By.ID,"blogtitle").send_keys(title)
 browser.find_element(By.ID,"blogpost").send_keys(blog_post)
 browser.find_element(By.ID,"submitpostbutton").click()
 
-
+browser.close()
