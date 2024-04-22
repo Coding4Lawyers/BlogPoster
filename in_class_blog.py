@@ -9,7 +9,8 @@ from selenium.webdriver.firefox.service import Service as FFService
 
 # Load browser and navigate to url
 options = FFOptions()
-options.headless = True  # Set headless mode
+# options.headless = True  # Set headless mode
+options.add_argument("-headless")
 service = FFService(executable_path="/snap/bin/geckodriver")
 browser = webdriver.Firefox(options=options,service=service)
 
