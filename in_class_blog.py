@@ -7,6 +7,9 @@ from selenium.webdriver.firefox.options import Options as FFOptions
 
 from selenium.webdriver.firefox.service import Service as FFService
 
+print(os.environ['BLOG_USERNAME'])
+print(os.environ['blog_username'])
+
 # Load browser and navigate to url
 options = FFOptions()
 # options.headless = True  # Set headless mode
