@@ -1,0 +1,21 @@
+name: Blog Automation
+
+on:
+    workflow_dispatch
+
+jobs:
+  scraper:
+    runs-on: ubuntu-latest
+
+    permissions:
+        contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Blog-Automation
+        run: |
+          sudo apt-get update
+          sudo apt-get install firefox-geckodriver
+          pip install -r requirements.txt
+          python in_class_blog.py
