@@ -5,13 +5,13 @@ from ai import checkChatGPT
 import os
 from selenium.webdriver.firefox.options import Options as FFOptions
 
-
+from selenium.webdriver.firefox.service import Service as FFService
 
 # Load browser and navigate to url
 options = FFOptions()
 options.headless = True  # Set headless mode
-service = webdriver.FirefoxService(executable_path="/snap/bin/geckodriver", options=options)
-browser = webdriver.Firefox(service=service)
+service = FFService(executable_path="/snap/bin/geckodriver")
+browser = webdriver.Firefox(options=options,service=service)
 
 url = 'https://hacking4lawyers.com/blog/index.php'
 browser.get(url)
